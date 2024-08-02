@@ -7,16 +7,16 @@ Make it so that when you click the 'Add to cart' button, whatever is written in 
 
 
 
- import {initializeApp} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
+import {initializeApp} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 
 
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings = {
-    databaseURL: "https://mobile-shop-cart-default-rtdb.asia-southeast1.firebasedatabase.app/"
+    databaseURL: "https://cartshop-21716-default-rtdb.asia-southeast1.firebasedatabase.app/"
 }
 
-const app = initializeApp (appSettings)
+const app = initializeApp(appSettings)
 
 const database = getDatabase(app)
 const shoppingListInDB = ref(database, "shoppingList")
@@ -48,7 +48,7 @@ onValue(shoppingListInDB, function(snapshot) {
             appendItemToShoppingListEl(currentItem)
         }    
     } else {
-        shoppingListEl.innerHTML = "No items here... yet"
+        shoppingListEl.innerHTML = "No Items Listed Yet..."
     }
 })
 
@@ -80,58 +80,4 @@ function appendItemToShoppingListEl(item) {
 
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
 
